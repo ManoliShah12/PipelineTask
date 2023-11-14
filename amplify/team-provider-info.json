@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-myfirstwb-dev-154552-authRole",
+      "UnauthRoleArn": "arn:aws:iam::954373636532:role/amplify-myfirstwb-dev-154552-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::954373636532:role/amplify-myfirstwb-dev-154552-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-myfirstwb-dev-154552-deployment",
+      "UnauthRoleName": "amplify-myfirstwb-dev-154552-unauthRole",
+      "StackName": "amplify-myfirstwb-dev-154552",
+      "StackId": "arn:aws:cloudformation:us-east-1:954373636532:stack/amplify-myfirstwb-dev-154552/e63693d0-5bec-11ee-a8ea-0ac05b855681",
+      "AmplifyAppId": "d1cp6y3uf7lgm4"
+    },
+    "categories": {
+      "function": {
+        "dynamoaddTrigger3f5c2358": {
+          "deploymentBucketName": "amplify-myfirstwb-dev-154552-deployment",
+          "s3Key": "amplify-builds/dynamoaddTrigger3f5c2358-76785a47357a4e717539-build.zip"
+        },
+        "myfirstwbtaskadd": {
+          "deploymentBucketName": "amplify-myfirstwb-dev-154552-deployment",
+          "s3Key": "amplify-builds/myfirstwbtaskadd-6471486f57616b504b55-build.zip"
+        }
+      },
+      "storage": {
+        "dynamoadd": {}
+      },
+      "api": {
+        "apicall": {}
+      }
+    }
+  }
+}

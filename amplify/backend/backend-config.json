@@ -1,0 +1,95 @@
+{
+  "api": {
+    "apicall": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "myfirstwbtaskadd"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "dynamoaddTrigger3f5c2358": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "dynamoadd"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "myfirstwbtaskadd": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "dynamoadd"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_dynamoaddTrigger3f5c2358_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dynamoaddTrigger3f5c2358"
+        }
+      ]
+    },
+    "AMPLIFY_function_dynamoaddTrigger3f5c2358_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "dynamoaddTrigger3f5c2358"
+        }
+      ]
+    },
+    "AMPLIFY_function_myfirstwbtaskadd_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myfirstwbtaskadd"
+        }
+      ]
+    },
+    "AMPLIFY_function_myfirstwbtaskadd_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myfirstwbtaskadd"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "dynamoadd": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

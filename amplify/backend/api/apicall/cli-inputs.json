@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "paths": {
+    "/add-task": {
+      "name": "/add-task",
+      "lambdaFunction": "myfirstwbtaskadd",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/delete-task": {
+      "name": "/delete-task",
+      "lambdaFunction": "myfirstwbtaskadd",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/edit-task": {
+      "name": "/edit-task",
+      "lambdaFunction": "myfirstwbtaskadd",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

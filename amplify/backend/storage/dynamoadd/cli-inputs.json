@@ -1,0 +1,16 @@
+{
+  "resourceName": "dynamoadd",
+  "tableName": "dynamoadd",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "text",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": [
+    "dynamoaddTrigger3f5c2358"
+  ]
+}
