@@ -1,0 +1,61 @@
+/* HomeScreen.css */
+
+.home-screen-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  background-color: whitesmoke;
+}
+
+.task-container {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.task-details {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.edit-delete-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #faebd7;
+  color: black;
+}
+
+.edit-delete-buttons button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-delete-buttons button.delete {
+  background-color: #f44336;
+}
+
+/* Modal styling */
+
+.modal-content {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content input,
+.modal-content button {
+  margin-top: 10px;
+}

@@ -10,7 +10,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Task Scheduling" component={HomeScreen} />
+        <Stack.Screen name="    Task Scheduling" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

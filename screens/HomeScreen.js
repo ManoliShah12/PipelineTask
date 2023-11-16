@@ -3,6 +3,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Modal from "react-modal";
 import axios from "axios";
 import DatePicker from "react-datepicker";
+import "./HomeScreen.css";
 
 const HomeScreen = () => {
   const [tasks, setTasks] = useState([]);
@@ -13,6 +14,7 @@ const HomeScreen = () => {
   const [isEditingModalVisible, setEditingModalVisible] = useState(false);
   const [editedDate, setEditedDate] = useState(new Date());
   const [email, setEmail] = useState(""); // New email state
+  const [editedEmail, setEditedEmail] = useState(null);
 
   useEffect(() => {
     loadTasks();
@@ -127,6 +129,7 @@ const HomeScreen = () => {
 
         setEditingTaskId(null);
         setEditedText("");
+        setEmail(null);
         setEditedDate(new Date());
         setEditingModalVisible(false);
       }
@@ -212,12 +215,13 @@ const HomeScreen = () => {
   };*/
 
   return (
-    <div>
+    <div className="task-container">
       <h3>Enter Task:</h3>
       <input
         type="task"
         placeholder="TaskText"
         value={taskName}
+        className="task-details"
         onChange={(e) => setTaskName(e.target.value)}
       />
       <br></br>
@@ -225,6 +229,7 @@ const HomeScreen = () => {
       <input
         type="email"
         placeholder="Email"
+        className="task-details"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
@@ -232,12 +237,15 @@ const HomeScreen = () => {
       <br></br>
       <DatePicker
         selected={selectedDate}
+        className="task-details"
         onChange={(date) => setSelectedDate(date)}
         dateFormat="yyyy-MM-dd"
       />
       <br></br>
       <br></br>
-      <button onClick={addTask}>Add Task</button>
+      <button className="edit-delete-buttons" onClick={addTask}>
+        Add Task
+      </button>
 
       {tasks.map((task) => (
         <div key={task.id}>
@@ -247,6 +255,7 @@ const HomeScreen = () => {
 
           <p>Date: {new Date(task.date).toDateString()}</p>
           <button
+            className="edit-delete-buttons"
             onClick={() => {
               setEditingTaskId(task.id);
               setEditedText(task.text);
@@ -257,12 +266,18 @@ const HomeScreen = () => {
           >
             Edit
           </button>
-          <button onClick={() => deleteTask(task.id)}>Delete</button>
+          <button
+            className="edit-delete-buttons"
+            onClick={() => deleteTask(task.id)}
+          >
+            Delete
+          </button>
         </div>
       ))}
 
       <Modal
         isOpen={isEditingModalVisible}
+        className="modal-content,modal-content input"
         onRequestClose={() => {
           setEditingModalVisible(false);
           setEmail("");
@@ -273,6 +288,7 @@ const HomeScreen = () => {
         <input
           type="text"
           placeholder="Edit Task Text"
+          className="task-details"
           value={editedText}
           onChange={(e) => setEditedText(e.target.value)}
         />
@@ -281,19 +297,23 @@ const HomeScreen = () => {
         <input
           type="email"
           placeholder="Edit Email"
+          className="task-details"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <br></br>
         <br></br>
         <DatePicker
+          className="task-details"
           selected={editedDate}
           onChange={(date) => setEditedDate(date)}
           dateFormat="yyyy-MM-dd"
         />
         <br></br>
         <br></br>
-        <button onClick={handleEditTask}>Save</button>
+        <button className="model-content button" onClick={handleEditTask}>
+          Save
+        </button>
       </Modal>
     </div>
   );
