@@ -53,6 +53,7 @@ const HomeScreen = () => {
 
     setTasks([...tasks, newTask]);
     setTaskName(""); // Change to setTaskName
+    setEmail("");
     setSelectedDate(new Date());
 
     try {
@@ -135,84 +136,6 @@ const HomeScreen = () => {
       }
     }
   };
-
-  /*const handleEditTask = async () => {
-    if (editingTaskId !== null) {
-      const editedTaskIndex = tasks.findIndex(
-        (task) => task.id === editingTaskId
-      );
-
-      if (editedTaskIndex !== -1) {
-        const updatedTasks = [...tasks];
-        updatedTasks[editedTaskIndex].text = editedText;
-        updatedTasks[editedTaskIndex].date = editedDate;
-        updatedTasks[editedTaskIndex].email = email; // Update email
-
-        setTasks(updatedTasks);
-
-        try {
-          const response = await axios.put(
-            `https://ronk95gsei.execute-api.us-east-1.amazonaws.com/Dev/users`,
-            updatedTasks[editedTaskIndex]
-          );
-
-          if (response.status === 200) {
-            // Task edited successfully
-            loadTasks(); // Refresh the tasks list
-          } else {
-            // Handle error
-            console.error("Error editing task:", response.statusText);
-          }
-        } catch (error) {
-          console.error("Error editing task:", error);
-        }
-
-        setEditingTaskId(null);
-        setEditedText("");
-        setEditedDate(new Date());
-        setEditingModalVisible(false);
-      }
-    }
-  };*/
-
-  /*const handleEditTask = async () => {
-    if (editingTaskId !== null) {
-      const editedTaskIndex = tasks.findIndex(
-        (task) => task.id === editingTaskId
-      );
-
-      if (editedTaskIndex !== -1) {
-        const updatedTask = {
-          id: editingTaskId,
-          text: editedText,
-          date: editedDate,
-          email: email, // Update email
-        };
-
-        try {
-          const response = await axios.put(
-            `https://ronk95gsei.execute-api.us-east-1.amazonaws.com/Dev/users`,
-            updatedTask
-          );
-
-          if (response.status === 200) {
-            // Task edited successfully
-            loadTasks(); // Refresh the tasks list
-          } else {
-            // Handle error
-            console.error("Error editing task:", response.statusText);
-          }
-        } catch (error) {
-          console.error("Error editing task:", error);
-        }
-
-        setEditingTaskId(null);
-        setEditedText("");
-        setEditedDate(new Date());
-        setEditingModalVisible(false);
-      }
-    }
-  };*/
 
   return (
     <div className="task-container">
